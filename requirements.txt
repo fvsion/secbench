@@ -1,0 +1,8 @@
+# Linux SecBench has ZERO runtime dependencies — it is pure Python 3.8+ standard
+# library by design, so it runs on a freshly-imaged target with nothing to
+# pip-install (and nothing to vet for supply-chain risk on a security tool).
+#
+# The entries below are optional and only used for development/testing.
+
+# Test runner (development only)
+pytest>=7.0 ; python_version >= "3.8"

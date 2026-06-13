@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linux-secbench"
+version = "1.0.0"
+description = "Modular Linux security & CIS-Benchmark assessment engine (Ubuntu 24.04-first, extensible)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "Apache-2.0" }
+authors = [{ name = "fvsion (Brennon Stovall)" }]
+keywords = ["security", "cis", "benchmark", "hardening", "audit", "ubuntu", "compliance"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Security",
+]
+# Zero runtime dependencies — pure standard library by design.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+secbench = "linux_secbench.cli:main"
+
+[tool.setuptools]
+packages = [
+    "linux_secbench",
+    "linux_secbench.core",
+    "linux_secbench.system",
+    "linux_secbench.checks",
+    "linux_secbench.checks.cis",
+    "linux_secbench.checks.extended",
+    "linux_secbench.analysis",
+    "linux_secbench.reporting",
+    "linux_secbench.persistence",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
