@@ -30,7 +30,7 @@ There is nothing to install — it is pure standard library. Copy the directory 
 the target host and run it:
 
 ```bash
-git clone <repo-url> linux-secbench && cd linux-secbench
+git clone https://github.com/fvsion/secbench secbench && cd secbench
 sudo python3 secbench.py scan
 ```
 
